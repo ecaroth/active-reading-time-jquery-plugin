@@ -56,6 +56,9 @@
 				left: 0;
 				top: 0;
 			}
+			.line.hide{
+				display: none;
+			}
 			#readline, .readline b.line{
 				background-color: rgba(66, 131, 244, .6);
 				height: 4px;
@@ -93,9 +96,9 @@
 				border-radius: 3px;
 				overflow: hidden;
 			}
-			#readSpeed div{
+			#readSpeed > div{
 				display: relative;
-				padding-right:38px;
+				padding-right:118px;
 			}
 			#readSpeed b{
 				display:block;
@@ -115,11 +118,40 @@
 				height: 100%;
 				cursor: pointer;
 			}
-			#legend div{
+			#readSpeed > div > div{
+				width: 80px;
+				height: 100%;
+				position: absolute;
+				right: 30px;
+				box-sizing: border-box;
+				padding:5px;
+				top: 0;
+			}
+			#readSpeed > div > div button{
+				border:none;
+				display:block;
+				color: white;
+				text-align: center;
+				font-size: 12px;
 				width: 100%;
-				margin:10px 0;
-				text-align: left;
-				line-height: 30px;
+				border-radius: 3px;
+				outline: none;
+				line-height: 13px;
+				padding: 5px;
+				background-color: rgba(0,0,0,.1);
+				box-shadow: none;
+				border: 1px solid rgba(0,0,0,.4);
+				cursor: pointer;
+			}
+			#readSpeed > div > div button.active{
+				background-color: rgba(66, 134, 244, .5);
+				border-color: rgba(66, 134, 244, .8);
+			}
+			#legend div{
+				display: block;
+				width: 100%;
+				float: left;
+				margin: 10px 0;
 			}
 			#legend div span{
 				width: 80px;
@@ -162,6 +194,9 @@
 			<div>
 				Words Per Min:
 				<b>200</b>
+				<div>
+					<button id="toggleGuides" class="active">Toggle<BR>Lines</button>
+				</div>
 				<span>?</span>
 			</div>
 		</div>
@@ -214,7 +249,7 @@
 
 		<div id="dialog-message" title="Active Reading Time jQuery Plugin">
 		  <p>
-		    Information &amp; Legend;
+		    Information &amp; Legend
 		  </p>
 		  <div id="legend">
 	    	<div class="readline">
@@ -233,8 +268,9 @@
 	    		<span><b class="line"></b></span>
 	    		<b>Read text bounds</b>
 	    	</div>
-	    	<BR>
-	    	Source code available <a href="https://github.com/ecaroth/active-reading-time-jquery-plugin" target="_blank">on GitHub</a>
+	    	<div style="margin:10px 0 0 0; text-align: right; font-size: 12px;">
+	    		Source code available <a href="https://github.com/ecaroth/active-reading-time-jquery-plugin" target="_blank">on GitHub</a>
+	    	</div>
 	    </div>
 		</div>
 
@@ -269,6 +305,15 @@
 		    $('#readSpeed span').click(function(){
 		    	$('#dialog-message').dialog('open');
 		    });
+		    $('#toggleGuides').click(function(){
+		    	if($(this).hasClass('active')){
+		    		$(this).removeClass('active');
+		    		$('.line').addClass('hide');
+		    	}else{
+		    		$(this).addClass('active');
+		    		$('.line').removeClass('hide');
+		    	}
+		    })
 			
 		</script>
 	</BODY>
