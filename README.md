@@ -1,16 +1,10 @@
-test http://localhost:3004/test.html
-TODO
-1. implement doneReading
-2. OBVI implement custom learning
-
-
 # Active Reading Time - jQuery Plugin
 
 **"Active Reading Time"** is a jquery plugin that allows you to add a _remaining time to read_ flag on the right side of your web pages, to allow your readers to immediately grasp the sense of how long the article is, how far into an article they are, etc. The flag follows the user scroll bar, fades when they stop scrolling, are finished, or click to remove the flag. 
 
 The plugin is very flexible, allowing you to set it up on your page and style appopriately, and learns the reading speed of an individual reader to customize the output. The plugin is a ready-to-use, drop in script to enhance your blog, knowledge base, or any other text-heavy resource.
 
-[See the plugin in action -  DEMO](#TODO)
+[See the plugin in action -  DEMO](https://ecaroth.github.io/active-reading-time-jquery-plugin//test/demo.html)
 ### Wait.. what? It learns how fast people read?
 
 Yessir, you heard that right! The plugin starts with a baseline metric for words per minute - **200**, which is the adult average (and is configurable). As a reader engages with the content and reads deeper into the article, the plugin adjusts their reading time calculation to reflect how fast they are _actually_ reading, then remembers their personal reading speed as they continue to browse your site.

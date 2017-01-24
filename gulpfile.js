@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 
 const PACKAGE = require('./package.json');
 //TODO - update this
-const ATTIBUTION = "/* Version "+PACKAGE.version+" active-reading-time (https://github.com/ecaroth/active-reading-time-jquery-plugin), Authored by Evan Carothers (https://github.com/ecaroth) */"+"\n\n";
+const ATTIBUTION = "/* Version "+PACKAGE.version+" active-reading-time (https://github.com/ecaroth/active-reading-time-jquery-plugin), Authored by Evan Carothers (https://github.com/ecaroth) */"+"\n\n",
       FILENAME = "active-reading-time.jquery.js";
 
 const DETECT_MOBILE_JS = fs.readFileSync('./dev/vendor/detectmobilebrowser.js','utf8'),

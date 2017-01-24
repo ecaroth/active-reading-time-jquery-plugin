@@ -246,14 +246,10 @@
 				    scrollDist = curScrollPos - data.lastScrollY,
 				    now = new Date().getTime();
 
-				console.log("VALS", remainingWords, scrollDist);
-
 				if (data.lastRemainingWords > 0 && scrollDist > 0 && scrollDist <= READ_TIME_CALC_TOLERANCES.maxScrollDistance) {
 					//reading forwards & within tolerances
 					var words = data.lastRemainingWords - remainingWords,
 					    readSpeedSample = 60 / (READ_TIME_CALC_INTERVAL / 1000) * words;
-
-					console.log("DATA", words, readSpeedSample);
 
 					if (readSpeedSample >= READ_TIME_CALC_TOLERANCES.minWordsPerMin && readSpeedSample <= READ_TIME_CALC_TOLERANCES.maxWordsPerMin) {
 						var newReadspeed = Math.floor((data.readSpeedWordsPerMin + readSpeedSample) / 2);

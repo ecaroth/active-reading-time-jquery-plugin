@@ -3,7 +3,24 @@
 	<HEAD>
 		<title>Active Reading Time jQuery Plugin - DEMO</title>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<link rel="stylesheet" type="text/css" href="/active-reading-time.css">
+		<script
+		  src="https://code.jquery.com/jquery-3.1.1.min.js"
+		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+		  crossorigin="anonymous"></script>
+		<script>
+			var env = window.location.href.indexOf("github") !== -1 ? 'github' : 'test';
+			if(env === 'github'){
+				var css_url = "https://cdn.rawgit.com/ecaroth/active-reading-time-jquery-plugin/0772d4cf/dist/active-reading-time.css";
+			}else{
+				var css_url = "/active-reading-time.css";
+			}
+			$("<link/>", {
+			   rel: "stylesheet",
+			   type: "text/css",
+			   href: css_url
+			}).appendTo("head");
+		</script>
+		<link rel="stylesheet" type="text/css" href="https://rawgithub.com/ecaroth/active-reading-time-jquery-plugin/master/dist/active-reading-time.css">
 		<style type="text/css">
 			body{
 				position: relative;
@@ -217,26 +234,27 @@
 	    		<b>Read text bounds</b>
 	    	</div>
 	    	<BR>
-	    	Source code available <a href="#!" target="_blank">on GitHub</a>
+	    	Source code available <a href="https://github.com/ecaroth/active-reading-time-jquery-plugin" target="_blank">on GitHub</a>
 	    </div>
 		</div>
 
 		<div id="footer"></div>
 		<script
-		  src="https://code.jquery.com/jquery-3.1.1.min.js"
-		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-		  crossorigin="anonymous"></script>
-		<script
 		  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
 		  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
 		  crossorigin="anonymous"></script>
-		<script src="/active-reading-time.dev.js"></script>
 		<script>
-			
-			$("article").activeReadingTime({
-				topMargin: $('#header').height() - 20,
-				minutesOnly: false
-			});
+			if(env === 'github'){
+				var script_src = "https://rawgithub.com/ecaroth/active-reading-time-jquery-plugin/master/dist/active-reading-time.jquery.min.js";
+			}else{
+				var script_src = "/active-reading-time.dev.js";
+			}
+			$.getScript(script_src, function () {
+		    	$("article").activeReadingTime({
+					topMargin: $('#header').height() - 20,
+					minutesOnly: false
+				});
+		  	});
 
 			$( "#dialog-message" ).dialog({
 		      modal: true,
