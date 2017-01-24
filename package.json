@@ -1,0 +1,37 @@
+{
+  "name": "active-reading-time-jquery-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Evan Carothers <evan.carothers@gmail.com> (https://github.com/ecaroth)",
+  "license": "MIT",
+  "bugs":{
+    "url":"https://github.com/ecaroth/active-reading-time-jquery-plugin/issues"
+  },
+  "homepage": "https://github.com/ecaroth/active-reading-time-jquery-plugin#readme",
+  "repository:": {
+    "type": "git",
+    "url": "git+https://github.com/ecaroth/active-reading-time-jquery-plugin"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015-script": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cli": "^1.2.1",
+    "gulp-debug": "^3.0.0",
+    "gulp-delete-lines": "0.0.7",
+    "gulp-insert": "^0.5.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-strip-comments": "^2.4.3",
+    "gulp-uglify": "^1.5.2",
+    "gulp-webserver": "^0.9.1",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "~2.0.1"
+  }
+}
